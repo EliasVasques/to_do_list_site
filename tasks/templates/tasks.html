@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}tasks{% endblock %}
+
+{% block 'body' %}
+
+<div class="container-fluid">
+    <div class="col-md-10">
+        <div class="row">
+            <h1 class="titulo">Tarefas</h1>
+        </div>
+        
+        <form method="GET" class="input-group">
+            <!--{% csrf_token %}-->
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" name="search" value="{{ search }}"/>
+            <button type="submit" class="btn btn-outline-primary">search</button>   
+        </form>
+
+        <div class="container">
+            <div class="row">
+                <div class="col limpar-pesquisa">
+                    <a href="/">limpar pesquisa</a>
+                </div>
+                <div class="col new-task">
+                    <a href="new_task/">
+                        <i class="fas fa-plus"></i>
+                        New Task
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+        
+        {% for task in tasks %}
+        <div class="task">
+            <hr>
+            <p>
+                {% if task.situation == 'done' %}
+                    <a href="task/{{ task.id }}" class="done">
+                        {{ task.title }}
+                    </a>
+                {% else %}
+                    <a href="task/{{ task.id }}" class="doing">
+                        {{ task.title }}
+                    </a>
+                {% endif %}
+                <a href="#" onclick="confirmExclusao('{{ task.id }}')" >
+                    <!-- lá na função(se ele confirmar) eu mando pra url de delete, já passei como parâmetro o id -->
+                    <i class="fas fa-times delete"></i>
+                </a>
+                <a href="edit_task/{{ task.id }}">
+                    <i class="far fa-edit edit"></i>
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+        
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+

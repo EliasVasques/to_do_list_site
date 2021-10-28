@@ -1,0 +1,99 @@
+
+/* navbar */
+nav {
+    height: 80px;
+    border-bottom: 2px solid black;
+}
+
+.navbar-nav { /*centralizar*/
+    margin: auto;
+}
+
+.nav-item {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    font-size: 21px;
+}
+
+.navbar-brand:hover {
+    font-size: 21px;
+}
+
+.col-md-10 { /* centralizar */
+    margin: auto;
+}
+
+/* titulo */
+.titulo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* search */
+.input-group {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* icones */
+.delete, .edit {
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* task */
+.limpar-pesquisa, .new-task {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.done:hover {
+    text-decoration: line-through;
+}
+
+a:hover {
+    font-size: 17px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.situation {
+    color: rgba(44, 44, 44, 0.37);
+}
+
+/* footer */
+footer {
+    background-color: #404347;
+    margin-top: 100px;
+    height: 200px;                        
+}
+
+/* forms */
+.add-task-form {
+    margin-top: 40px;
+}
+
+.cadastro {
+    margin: 20px;
+}
+
+/* footer */
+footer p {
+    text-align: center;
+    position: relative;              
+    top: 45%; 
+    color: white;
+}
+
